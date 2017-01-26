@@ -6,19 +6,11 @@
 # Difficulty: easy.
 
 def reverse(string):
+    idx = 1
+    result = ""
+    for character in string:
+        result += string[len(string) - idx]
+        idx += 1
+    return result
 
-# These are tests to check that your code is working. After writing
-# your solution, they should all print true.
-
-print("\nTests for #reverse")
-print("===============================================")
-    print(
-      'reverse("abc") == "cba": ' + (reverse("abc") == "cba").to_s
-    )
-    print(
-      'reverse("a") == "a": ' + (reverse("a") == "a").to_s
-    )
-    print(
-      'reverse("") == "": ' + (reverse("") == "").to_s
-    )
-print("===============================================")
+print reverse("This is crazy")
