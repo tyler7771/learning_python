@@ -10,7 +10,8 @@ def two_sum(nums):
     for idx1, num1 in enumerate(nums):
         for idx2, num2 in enumerate(nums):
             if num1 + num2 == 0 and idx1 != idx2:
-                result.append((idx1, idx2))
+                if (idx2, idx1) not in result:
+                    result.append((idx1, idx2))
 
     if result == []:
         return "nil"
