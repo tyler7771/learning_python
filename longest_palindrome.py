@@ -28,8 +28,21 @@ def palindrome(string):
     return True
 
 def longest_palindrome(string):
+    longest = ""
+    idx1 = 0
 
+    while idx1 < len(string):
+        idx2 = idx1 + 1
+        while idx2 < len(string):
+            word = string[idx1:(idx2 + 1)]
+            if palindrome(word):
+                if longest == "" or len(longest) < len(word):
+                    longest = word
+            idx2 += 1
+        idx1 += 1
 
-print longest_palindrome("abcbd")
-print longest_palindrome("abba")
-print longest_palindrome("abcbdeffe")
+    return longest
+
+print longest_palindrome("abcbd") #bcb
+print longest_palindrome("abba") #abba
+print longest_palindrome("abcbdeffe") #effe
