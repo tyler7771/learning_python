@@ -77,3 +77,34 @@ def fib_rec(n):
 # print fib_rec(3)
 # print fib_rec(4)
 # print fib_rec(5)
+
+# Write a recursive binary search: bsearch(array, target). Note that binary
+# search only works on sorted arrays. Make sure to return the location of the
+# found object (or nil if not found!). Hint: you will probably want to use
+# subarrays.
+
+def bsearch(list, target):
+    if len(list) == 0:
+        return None
+
+    mid = len(list) / 2
+
+    if list[mid] == target:
+        return mid
+    elif list[mid] > target:
+        return bsearch(list[0:mid], target)
+    elif list[mid] < target:
+        result = bsearch(list[(mid + 1):(len(list))], target)
+        if result == None:
+            result = None
+        else:
+            result += (mid + 1)
+        return result
+
+# print bsearch([1, 2, 3], 1) # => 0
+# print bsearch([2, 3, 4, 5], 3) # => 1
+# print bsearch([2, 4, 6, 8, 10], 6) # => 2
+# print bsearch([1, 3, 4, 5, 9], 5) # => 3
+# print bsearch([1, 2, 3, 4, 5, 6], 6) # => 5
+# print bsearch([1, 2, 3, 4, 5, 6], 0) # => nil
+# print bsearch([1, 2, 3, 4, 5, 7], 6) # => nil
