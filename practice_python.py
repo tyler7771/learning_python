@@ -55,4 +55,31 @@ def guess_the_number():
 
     print "The number was %s and was guessed in %s guesses." % (number, tries)
 
-print guess_the_number()
+# print guess_the_number()
+
+# 3. Mad Libs Generator
+#
+# The Goal: Inspired by Summer Sons Mad Libs project with Javascript.
+# The program will first prompt the user for a series of inputs a la Mad
+# Libs. For example, a singular noun, an adjective, etc. Then, once all the
+# information has been inputted, the program will take that data and place
+# them into a premade story template. Youll need prompts for user input,
+# and to then print out the full story at the end with the input included.
+
+def mad_lib():
+    adjective1 = raw_input("Name an adjective(descibe something or someone)! ")
+    adjective2 = raw_input("Name another adjective! ")
+    adjective3 = raw_input("3rd adjective! ")
+    female = raw_input("Give me a female name! ")
+    male = raw_input("Give me a male name! ")
+    noun = raw_input("Name a noun(person, place or thing)! ")
+    occupation1 = raw_input("Give me an occupation! ")
+    occupation2 = raw_input("Second occupation! ")
+    body_part = raw_input("Name a body part! ")
+    ing_verb = raw_input("Finally, a verb(action) ending in \'ing\'! ")
+
+    sentence = "Thank You! Thank you from the bottom of my %s. I don\'t know what to say. I\'m speechless. I truly didn\'t expect to win this %s, certainly not with so many %s actors competing in the same category. First and foremost, my thanks to %s. You couldn\'t work with a better %s. And I\'m sure I wouldn\'t be %s here tonight if it weren\'t for my %s director. I must also thank %s, who wrote an %s script for me. Of course, none of this would be happening if it weren\'t for my agent, who convinced the network that I could play a 75 year-old, retired %s." % (body_part, noun, adjective1, female, occupation1, ing_verb, adjective2, male, adjective3, occupation2)
+
+    return sentence
+
+print mad_lib()
